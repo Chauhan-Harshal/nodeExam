@@ -1,0 +1,14 @@
+<nav>
+  <a href="/">Home</a> |
+  <a href="/articles/view">Articles</a>
+  <% if (user) { %>
+    | <a href="/articles/mine/view">My Articles</a>
+    | <a href="/articles/create">New Article</a>
+    | <form action="/auth/logout" method="post" style="display:inline;">
+        <button type="submit">Logout</button>
+      </form>
+  <% } else { %>
+    | <a href="/auth/login">Login</a>
+    | <a href="/auth/register">Register</a>
+  <% } %>
+</nav>

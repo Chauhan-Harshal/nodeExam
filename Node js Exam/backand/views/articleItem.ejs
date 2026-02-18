@@ -1,0 +1,9 @@
+<li>
+  <a href="/articles/<%= article.id %>/view"><%= article.title %></a>
+  <% if (user && (user.email === article.author || user.role === 'admin')) { %>
+    | <a href="/articles/<%= article.id %>/edit">Edit</a>
+    <form action="/articles/<%= article.id %>?_method=DELETE" method="post" style="display:inline;">
+      <button type="submit">Delete</button>
+    </form>
+  <% } %>
+</li>

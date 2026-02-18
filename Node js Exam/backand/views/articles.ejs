@@ -1,0 +1,15 @@
+<html>
+<head><title>Articles</title></head>
+<body>
+  <h1>Articles</h1>
+  <ul>
+    <% articles.forEach(a => { %>
+      <li><a href="/articles/<%= a.id %>/view"><%= a.title %></a></li>
+    <% }); %>
+  </ul>
+  <% if (user) { %>
+    <p>Logged in as <%= user.email %> (<%= user.role %>)</p>
+    <p><a href="/articles/mine">My Articles</a></p>
+  <% } %>
+</body>
+</html>

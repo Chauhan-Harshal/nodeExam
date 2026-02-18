@@ -1,0 +1,7 @@
+<%- include('navbar', { user }); %>
+<h1>All Articles</h1>
+<ul>
+  <% articles.forEach(a => { %>
+    <%- include('articleItem', { article: a, user: user }); %>
+  <% }); %>
+</ul>
